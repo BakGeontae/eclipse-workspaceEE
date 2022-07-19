@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MIMETypeImageResponseServlet
  */
-@WebServlet("/response_mp3.do")
-public class MIMETypeImageResponseServlet extends HttpServlet {
+@WebServlet("/response_image.do")
+public class MIMETypeMP3ResponseServlet extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*
