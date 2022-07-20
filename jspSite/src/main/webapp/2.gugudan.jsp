@@ -9,16 +9,37 @@
 <BODY>
 	<center>
 		<H2>JSP 잘났어 정말 별꼴이야!!!!!!!!!</H2>
-		
-			<img src='tomcat.gif' />
-				<H2>JSP구구단</H2>
-			<table border=1 width=600 bgcolor=#CCFF33  bordercolordark=#FF6600
-				cellspacing=0>
-				<tr>
-					<td align=center>2*1=2</td>
-				</tr>
-			</table>
-	</center>		
-			<br />
+
+		<img src='tomcat.gif' />
+		<%--
+			스크립렛<% ~ %>
+		 --%>
+		<H2>JSP구구단[scriptlet(스크립렛)]</H2>
+		<table border=1 width=600 bgcolor=#CCFF33 bordercolordark=#FF6600
+			cellspacing=0>
+			<%for (int i = 1; i <= 9; i++) {%>
+			<tr>
+				<%for (int j = 2; j <= 9; j++) {%>
+				<td align=center><%out.print(j); %>*<%out.print(i); %>=<%out.print(i*j); %> </td>
+				<%}%>
+			</tr>
+			<%}	%>
+		</table>
+		<%--
+			표현식 <%= ~ %>
+		 --%>
+		<H2>JSP구구단[expression(표현식)]</H2>
+		<table border=1 width=600 bgcolor=#CCFF33 bordercolordark=#FF6600
+			cellspacing=0>
+			<%for (int i = 1; i <= 9; i++) {%>
+			<tr>
+				<%for (int j = 2; j <= 9; j++) {%>
+					<td align=center><%=j%>*<%=i%>=<%=i*j%> </td>
+				<%}%>
+			</tr>
+			<%}	%>
+		</table>
+	</center>
+	<br />
 </BODY>
 </HTML>
