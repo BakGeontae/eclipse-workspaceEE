@@ -41,7 +41,6 @@
 	속성(attribute)객체
 		- 속성객체이름: a,b,c,d,e,f,guest,user,guestList,guestMap
 	*/
-
 %>    
 
     
@@ -76,16 +75,66 @@
 	<li><%=((List<Guest>)request.getAttribute("guestList")).get(0).getGuest_name()%></li>
 	<li><%=((List<Guest>)request.getAttribute("guestList")).get(0).getGuest_email()%></li>
 	<li><%=((List<Guest>)request.getAttribute("guestList")).get(0).getGuest_homepage()%></li>
+	<li><%=((List<Guest>)request.getAttribute("guestList")).get(0).getGuest_title()%></li>
+	<li><%=((List<Guest>)request.getAttribute("guestList")).get(0).getGuest_content()%></li>
 	<li>------------Map---------------</li>
+	<li><%=((Map<String,Guest>)request.getAttribute("guestMap")).get("g1").getGuest_no() %></li>
+	<li><%=((Map<String,Guest>)request.getAttribute("guestMap")).get("g1").getGuest_name() %></li>
+	<li><%=((Map<String,Guest>)request.getAttribute("guestMap")).get("g1").getGuest_email() %></li>
+	<li><%=((Map<String,Guest>)request.getAttribute("guestMap")).get("g1").getGuest_homepage() %></li>
+	<li><%=((Map<String,Guest>)request.getAttribute("guestMap")).get("g1").getGuest_title() %></li>
+	<li><%=((Map<String,Guest>)request.getAttribute("guestMap")).get("g1").getGuest_content() %></li>
+	<li>------------JSP service안에선언된 local변수--------------</li>
+	<li><%=str1%></li>
+	<li><%=int1%></li>
+	<li><%=user1.getUserId()%></li>
+	<li><%=user1.getPassword()%></li>
+	<li><%=user1.getEmail()%></li>
+	<li><%=user1.getName()%></li>
+	
+	<li>######### EL사용 ##########</li>
+	<li>------------String,Wrapper---------------</li>
+	<li>${a}</li>
+	<li>${b}</li>
+	<li>${c}</li>
+	<li>${d}</li>
+	<li>${e}</li>
+	<li>${f}</li>
+	<li>------------java Bean---------------</li>
+	<li>${guest.getGuest_no()}</li>
+	<li>${guest.getGuest_name()}</li>
+	<li>${guest.getGuest_email()}</li>
+	<li>${guest.getGuest_homepage()}</li>
+	<li>${guest.getGuest_title()}</li>
+	<li>${guest.getGuest_content()}</li>
+	
+	<li>${user.userId}</li>
+	<li>${user.password}</li>
+	<li>${user.name}</li>
+	<li>${user.email}</li>
+	<li>------------List---------------</li>
+	<li>${guestList.get(0).getGuest_no()}</li>
+	<li>${guestList[0].guest_name}</li>
+	<li>${guestList[0].guest_email}</li>
+	<li>${guestList[0].guest_homepage}</li>
+	<li>${guestList[0].guest_title}</li>
+	<li>${guestList[0].guest_content}</li>
+	
+	<li>------------Map---------------</li>
+	<li>${guestMap.g1.guest_no}</li>
+	<li>${guestMap["g1"].guest_name}</li>
+	<li>${guestMap.g1.guest_email}</li>
+	<li>${guestMap.g1.guest_homepage}</li>
+	<li>${guestMap.g1.guest_title}</li>
+	<li>${guestMap.g1.guest_content}</li>
+	<li>------------JSP service안에선언된 local변수 EL로는 출력 불가능--------------</li>
+	<li>${str1}</li>
+	<li>${int1}</li>
+	<li>${user1.getUserId()}</li>
+	<li>${user1.getPassword()}</li>
+	<li>${user1.getEmail()}</li>
+	<li>${user1.getName()}</li>
 	
 </ul>
 </body>
 </html>
-
-
-
-
-
-
-
-
